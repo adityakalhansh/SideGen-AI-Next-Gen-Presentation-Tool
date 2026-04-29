@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SlideGen AI - Smart PPT Generator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="container">
+        <header>
+            <h1>SlideGen <span>AI</span></h1>
+            <p>Generate professional presentations in seconds using AI</p>
+        </header>
+
+        <main class="glass-panel">
+            <div id="input-section" class="section active">
+                <div class="form-group">
+                    <label for="topic">What is your presentation about?</label>
+                    <input type="text" id="topic" placeholder="e.g. The Future of Artificial Intelligence" autocomplete="off">
+                    
+                    <div class="suggestions-container" id="suggestions-container">
+                        <button class="btn-secondary btn-small" id="btn-suggest">Get Suggestions ✨</button>
+                        <div id="suggestions-list" class="suggestions-list hidden"></div>
+                    </div>
+                </div>
+
+                <div class="options-grid">
+                    <div class="form-group">
+                        <label for="level">Content Level</label>
+                        <select id="level">
+                            <option value="basic">Basic (School Level)</option>
+                            <option value="standard" selected>Standard (Moderate Detail)</option>
+                            <option value="advanced">Advanced (College/Pro)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="length">Slide Count</label>
+                        <select id="length">
+                            <option value="short">Short (5 slides)</option>
+                            <option value="medium" selected>Medium (8 slides)</option>
+                            <option value="long">Long (12 slides)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="theme">Visual Theme</label>
+                        <select id="theme">
+                            <option value="dark_modern">Dark Modern (Neon Accents)</option>
+                            <option value="minimal_white" selected>Minimal White (Clean)</option>
+                            <option value="gradient_tech">Gradient Tech (Purple/Blue)</option>
+                            <option value="startup_pitch">Startup Pitch (Bold)</option>
+                            <option value="education_classic">Education Classic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="btn-generate" class="btn-primary">
+                    <span class="btn-text">Generate Outline</span>
+                    <span class="loader hidden"></span>
+                </button>
+            </div>
+
+            <!-- Preview Section -->
+            <div id="preview-section" class="section hidden">
+                <div class="preview-header">
+                    <h2>Review & Edit Outline</h2>
+                    <p>You can modify the titles and bullet points before generating the final PowerPoint file.</p>
+                </div>
+                
+                <div id="slides-container" class="slides-container">
+                    <!-- Slides injected here -->
+                </div>
+
+                <div class="actions-row">
+                    <button id="btn-back" class="btn-secondary">Back</button>
+                    <button id="btn-regenerate" class="btn-secondary">Regenerate 🔄</button>
+                    <button id="btn-download" class="btn-primary">
+                        <span class="btn-text">Download PPTX ⬇️</span>
+                        <span class="loader hidden"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Success Message -->
+            <div id="success-message" class="success-message hidden">
+                <div class="success-icon">✅</div>
+                <h3>Presentation Downloaded!</h3>
+                <p>Your PowerPoint file is ready.</p>
+                <button id="btn-start-over" class="btn-secondary">Create Another</button>
+            </div>
+        </main>
+        
+        <div class="history-section" id="history-section">
+            <h3>Recent Topics</h3>
+            <div id="history-list" class="history-list"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
